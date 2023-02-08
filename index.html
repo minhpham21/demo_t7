@@ -228,6 +228,19 @@
                     canvas.width = settings.size;
                     canvas.height = settings.size;
 
+                    // context.fillStyle = context.fillStyle = 'rgb(red,green,blue)'
+                    let gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+                    // gradient.addColorStop(0.1, '#ff5c33');
+                    gradient.addColorStop(0.2, '#ff66b3');
+                    // gradient.addColorStop(0.6, '#b3ffff');
+                    gradient.addColorStop(0.4, '#ccccff');
+                    gradient.addColorStop(0.8, '#80ff80');
+                    // gradient.addColorStop(0.9, '#ffff33');
+                    // context.strokeStyle = gradient;
+
+                    context.fillStyle = gradient
+                    context.fillRect(200, 50, 100, 50);
+
                     function to(t) {
                         var point = pointOnHeart(t);
 
@@ -251,7 +264,7 @@
                     }
 
                     context.closePath();
-                    context.fillStyle = '#FF0000';
+
                     context.fill();
 
                     var image = new Image();
@@ -294,7 +307,7 @@
                 }, 10);
 
             })(document.getElementById('app'));
-            });
+        });
     </script>
 </body>
 
